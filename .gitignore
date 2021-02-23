@@ -1,0 +1,9 @@
+bin
+build
+dist
+include
+jonstout_actions_demo.egg-info
+lib
+lib64
+pyvenv.cfg
+**/__pycache__

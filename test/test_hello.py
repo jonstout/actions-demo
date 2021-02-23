@@ -1,12 +1,14 @@
 import unittest
 
-from jonstout.hello import hello_message
+from jonstout.actions_demo import hello_message
 
 
 class TestHello(unittest.TestCase):
   def test_hello_message(self):
     testdata = [
-      { 'name': "Jonathan", 'result': "Hello Jonathan." }
+      { 'name': "Jonathan", 'result': "Hello Jonathan." },
+      { 'name': "Dave", 'result': "Hello Dave." },
+      { 'name': "Snoopy", 'result': "Hello Snoopy." },
     ]
     
     for data in testdata:
