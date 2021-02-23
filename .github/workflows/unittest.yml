@@ -1,5 +1,5 @@
 name: unittest
-on: push
+on: [push, pull-request]
 
 jobs:
   unittest:
@@ -11,4 +11,4 @@ jobs:
         with:
           python-version : '3.9'
       - name: Run unittests
-        run: python -m unittest discover -v
+        run:  python -m unittest discover -v
