@@ -1,2 +1,2 @@
 def hello_message(name: str) -> str:
-  return f"Hello {name}."
+  return f"What's up {name}?"
