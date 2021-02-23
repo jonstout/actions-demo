@@ -1,5 +1,11 @@
 name: unittest
-on: [push, pull-request]
+on: [push, pull_request]
+push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   unittest:
