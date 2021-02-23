@@ -11,4 +11,4 @@ jobs:
         with:
           python-version : '3.9'
       - name: Run unittests
-        run: python -m unittest test
+        run: python -m unittest test discover -v
