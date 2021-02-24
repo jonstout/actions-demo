@@ -1,3 +1,3 @@
-import jonstout.hello as hello
+import jonstout.actions_demo as hello
 
-hello.hello_message('Jeff')
+print(hello.hello_message('Jeff'))
