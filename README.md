@@ -37,6 +37,29 @@ Github Actions are software scripts triggered by Github events
 
 ## Github Event - push
 
+```
+name: unittest
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version : '3.9'
+      - name: Run unittests
+        run:  python -m unittest discover -v
+```
+
 ## Github Event - pull_request
 
 
