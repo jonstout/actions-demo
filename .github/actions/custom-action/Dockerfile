@@ -2,6 +2,7 @@
 FROM centos:7
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
+RUN ls -la $GITHUB_WORKSPACE
 RUN ls -la /
 RUN ls -la /home/
 RUN ls -la /home/runner/
