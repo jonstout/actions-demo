@@ -61,5 +61,40 @@ jobs:
 ```
 
 ## Github Event - pull_request
+```
+name: release
+on:
+  release:
+    types: [created]
 
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version : '3.9'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Build
+        env:
+          RELEASE_VERSION: ${{ github.event.release.tag_name }}
+        run: python setup.py sdist bdist_wheel
+      - name: Archive build
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-${{ github.event.release.tag_name }}
+          path: dist
+      - name: Publish build
+        env:
+          TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+        run: |
+          python -m twine upload --verbose dist/*
+```
 
