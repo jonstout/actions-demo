@@ -17,3 +17,5 @@ jobs:
       # This step references the directory that contains the action.
       - name: Use custom action
         uses: jonstout/actions-demo/.github/actions/custom-action@master
+        with:
+          who-to-greet: ${{ github.event.inputs.who-to-greet }}
