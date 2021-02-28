@@ -16,4 +16,4 @@ jobs:
         uses: actions/checkout@v2
       # This step references the directory that contains the action.
       - name: Use custom action
-        uses: .github/actions/custom-action
+        uses: jonstout/actions-demo[.github/actions/custom-action]@master
