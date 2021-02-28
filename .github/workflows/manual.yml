@@ -1,0 +1,19 @@
+name: manual
+on:
+  workflow_dispatch:
+    inputs:
+      who-to-greet:
+        description: 'Person to greet'
+        required: true
+        default: 'World'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # This step checks out a copy of your repository.
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # This step references the directory that contains the action.
+      - name: Use custom action
+        uses: ./.github/actions/custom-action
