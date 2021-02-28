@@ -1,11 +1,6 @@
-# Container image that runs your code
 FROM centos:7
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
-RUN ls -la $GITHUB_WORKSPACE
-RUN ls -la
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod 777 /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
