@@ -7,7 +7,7 @@ RUN ls -la /
 RUN ls -la /home/
 RUN ls -la /home/runner/
 RUN ls -la /home/runner/work/actions-demo/
-COPY /home/runner/work/actions-demo/.github/actions/custom-action/entrypoint.sh /entrypoint.sh
+COPY ./.github/actions/custom-action/entrypoint.sh /entrypoint.sh
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/entrypoint.sh"]
